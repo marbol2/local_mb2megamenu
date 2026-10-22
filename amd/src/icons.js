@@ -1,0 +1,54 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ *
+ * @module     local_mb2megamenu
+ * @copyright  2019 - 2026 Mariusz Boloz (lmsstyle.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+define(['jquery', 'core/ajax'], function($, Ajax) {
+
+    'use strict';
+
+    const themeIcons = () => {
+
+        const getIcons = () => {
+            const params = {};
+
+            const request = {
+                methodname: 'local_mb2megamenu_get_theme_icons',
+                args: params
+            };
+
+            return Ajax.call([request])[0];
+        };
+
+        getIcons().then(data => {
+            $('#mb2megamenu-modal-icons .mb2megamenu-modal-body').html(data.icons);
+            return;
+        }).catch(err => {
+            require(["core/log"], function(log) {
+                log.debug(err);
+            });
+        });
+    };
+
+    return {
+        themeIcons: themeIcons
+    };
+
+});

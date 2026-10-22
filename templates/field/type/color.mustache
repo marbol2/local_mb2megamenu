@@ -1,0 +1,46 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mb2megamenu/field/type/color
+}}
+
+{{{label}}}
+
+<div class="form-controls{{#istwin}} istwin{{/istwin}}">
+    {{#istwin}}
+    <div class="form-twin-control">
+        <span class="form-twin-label">{{twinlabel1}}:</span>
+    {{/istwin}}
+
+        <input type="text"
+               class="mb2megamenu-input mb2color form-control input-{{type}} form-{{type}}"
+               name="{{id}}"
+               data-value="{{default}}">
+
+    {{#istwin}}
+    </div>
+
+    <div class="form-twin-control">
+        <span class="form-twin-label">{{twinlabel2}}:</span>
+
+        <input type="text"
+               class="mb2megamenu-input mb2color input-{{twintype}}"
+               name="{{twinid}}"
+               data-value="{{twindefault}}">
+    </div>
+    {{/istwin}}
+</div>

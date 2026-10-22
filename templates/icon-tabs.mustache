@@ -1,0 +1,58 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mb2megamenu/icon-tabs
+}}
+
+<div class="mb2megamenu-icon-tabs theme-tabs tabs-sm">
+    <ul class="nav nav-tabs">
+        {{#tabs}}
+            <li class="nav-item{{#active}} active{{/active}}">
+                <a class="nav-link{{#active}} active{{/active}}"
+                   data-toggle="tab"
+                   data-bs-toggle="tab"
+                   href="#{{tabid}}">
+                    {{name}}
+                </a>
+            </li>
+        {{/tabs}}
+    </ul>
+
+    <div class="tab-content">
+        {{#panes}}
+            <div id="{{tabid}}" class="tab-pane fade{{#active}} in active{{/active}}">
+                <div class="search-modal-item">
+                    <input type="text"
+                           class="mb2megamenu-search-icon"
+                           placeholder="{{searchplaceholder}}">
+                </div>
+
+                <div class="mb2megamenu-icons">
+                    {{#icons}}
+                        <button type="button"
+                                class="mb2megamenu-icon-toinsert themereset"
+                                data-iconname="{{iconname}}"
+                                title="{{iconname}}"
+                                data-dismiss="mb2modal">
+                            <i class="{{iconname}}"></i>
+                        </button>
+                    {{/icons}}
+                </div>
+            </div>
+        {{/panes}}
+    </div>
+</div>

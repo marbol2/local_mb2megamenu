@@ -1,0 +1,98 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mb2megamenu/builder/menu-item
+}}
+
+<div class="mb2megamenu-item{{hidecls}}" {{{datatts}}}>
+    <div class="mb2megamenu-item-header">
+        <div class="mb2megamenu-drag-handle mb2megamenu-item-label">
+            <span class="item-sort mr-2">
+                <i class="bi bi-arrows-move"></i>
+            </span>
+
+            <span class="item-label">{{label}}</span>
+
+            <button type="button" class="themereset showhideitem d-inline-flex align-items-center justify-content-center p-0{{hidecls}}">
+                <i class="{{hideicon}}"></i>
+            </button>
+
+            <div class="item-actions"></div>
+
+            <button type="button" class="themereset mb2megamenu-item-form-toggle">
+                <span class="sr-only">{{edit}}</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mb2megamenu-item-content">
+        <div class="mb2megamenu-item-subform">
+            <input type="hidden" name="hide" value="{{hide}}">
+
+            <div class="mb2megamenu-subform-item">
+                <div class="form-label">
+                    <label>{{urltext}}</label>
+                </div>
+                <div class="form-controls">
+                    <input type="text" class="mb2megamenu-form-control form-control code" name="url" value="{{url}}" placeholder="https://">
+                </div>
+            </div>
+
+            <div class="mb2megamenu-subform-item">
+                <div class="form-controls">
+                    <input type="checkbox" name="blank" value="{{blank}}" {{#blankchecked}}checked{{/blankchecked}}>
+                    <label>{{linktarget}}</label>
+                </div>
+            </div>
+
+            <div class="mb2megamenu-subform-item">
+                <div class="form-label">
+                    <label>{{navlabel}}</label>
+                </div>
+                <div class="form-controls">
+                    <input type="text" name="label" class="mb2megamenu-form-control form-control" value="{{inputlabel}}">
+                </div>
+            </div>
+
+            <div class="mb2megamenu-subform-item">
+                <div class="form-controls">
+                    <button type="button" class="mb2megamenu-item-options mb2-pb-btn typeinfo sizexs" data-modal="#mb2megamenu-modal-settings">
+                        {{menuitemopts}}
+                    </button>
+
+                    {{#showlanguageopts}}
+                    <button type="button" class="mb2megamenu-item-lang_options mb2-pb-btn sizexs" data-modal="#mb2megamenu-modal-languages">
+                        {{languageopts}}
+                    </button>
+                    {{/showlanguageopts}}
+                </div>
+            </div>
+
+            <div class="mb2megamenu-subform-footer">
+                <button type="button" class="themereset mb2megamenu-item-footer-btn btn-remove">{{remove}}</button>
+                |
+                <button type="button" class="themereset mb2megamenu-item-footer-btn btn-cancel">{{cancel}}</button>
+            </div>
+        </div>
+
+        <div class="mb2megamenu-sortable mb2megamenu-item-sortable">
+            {{#children}}
+                {{> local_mb2megamenu/builder/menu-item }}
+            {{/children}}
+        </div>
+    </div>
+</div>

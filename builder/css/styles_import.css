@@ -1,0 +1,67 @@
+
+
+/* ======================= IMPORT MENUS */
+
+.mb2megamenu-menu-import {
+    margin-top: 3rem;
+    border: solid 1px rgba(0,0,0,.1);
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.mb2megamenu-import-header {
+    background-color: #f4f4f4;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--mb2-pb-fssmall);
+    font-weight: var(--mb2-pb-fwbold);
+    padding: .8rem;
+    line-height: 1;
+    width: 100%;
+}
+
+
+.mb2megamenu-import-items {
+    padding: .6rem 1rem;
+    border-top: solid 1px rgba(0,0,0,.1);
+    display: none;
+}
+
+.mb2megamenu-menu-import.active .mb2megamenu-import-items {
+    display: block;
+}
+
+
+.mb2megamenu-import-item {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem;
+    border-bottom: solid 1px rgba(0,0,0,.1);
+}
+
+.mb2megamenu-import-item:hover {
+    background-color: #f9f9f9;
+}
+
+.mb2megamenu-import-item .item-name {
+    font-size: var(--mb2-pb-fssmall);
+    font-weight: var(--mb2-pb-fwbold);
+}
+
+
+.mb2megamenu-import-item:last-child {
+    border: 0;
+}
+
+.mb2megamenu-import-item button.noaction .importing,
+.mb2megamenu-import-item button.noaction .importdone,
+.mb2megamenu-import-item button.importing .import,
+.mb2megamenu-import-item button.importing .importdone,
+.mb2megamenu-import-item button.importdone .import,
+.mb2megamenu-import-item button.importdone .importing {
+    display: none;
+}
+
