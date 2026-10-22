@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'local_mb2megamenu';
 $plugin->version = 2026102100;
 $plugin->requires = 2022041900; // Moodle 4+.
-$plugin->release = '1.6.1';
+$plugin->release = '1.7.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = ['theme_mb2nl' => 2026041308];
